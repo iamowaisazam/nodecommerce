@@ -1,0 +1,81 @@
+<%- include('../layout/header'); %>
+</head>
+<body>
+
+    <%- include('../layout/nav'); %>
+    
+        <!-- Hero Start -->
+        <section class="bg-half bg-light d-table w-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 text-center">
+                        <div class="page-next-level">
+                            <h4 class="title"> All Rooms </h4>
+                            <div class="page-next">
+                                <nav aria-label="breadcrumb" class="d-inline-block">
+                                    <ul class="breadcrumb bg-white rounded shadow mb-0">
+                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="/rooms">Rooms</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div> <!--end container-->
+        </section><!--end section-->
+        <div class="position-relative">
+            <div class="shape overflow-hidden text-white">
+                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+            <!-- Start Products -->
+            <section class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-8 col-12 mt-5 pt-2 mt-sm-0 pt-sm-0">
+                            <div class="row">
+
+                                <% rooms.forEach(function(room){ %>
+
+                                    <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                                        <div class="card work-container work-modern rounded border-0 overflow-hidden">
+                                            <div class="card-body p-0">
+                                                <img src="../assets/<%- room.thumbnail %>" class="img-fluid rounded" alt="work-image">
+                                                <div class="overlay-work"></div>
+                                                <div class="content">
+                                                    <a href="rooms/<%- room.id %>" class="title text-white pb-2 border-bottom"><%- room.title %></a>
+                                                    <ul class="post-meta mb-0 mt-2 text-white list-unstyled">
+                                                        <li class="list-inline-item mr-3"><i class="mdi mdi-bed-empty mdi-24px mr-2"></i><%- room.bed %> Bed</li>
+                                                        <li class="list-inline-item"><i class="mdi mdi-scale-bathroom mdi-24px mr-2"></i><%- room.beth %> Bathrooms</li>
+                                                    </ul>
+                                                    <p class="text-white d-block mb-0">Rent <span class="text-success">$<%- room.price %></span> /<%- room.type %></p>
+                                                </div>
+                                                <div class="read_more bg-primary text-center rounded-circle">
+                                                    <a href="rooms/<%- room.id %>" class="text-light d-block"><i data-feather="chevron-right" class="fea icon-sm title-dark"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                <% }); %>
+
+                                <!-- PAGINATION END -->
+                            </div><!--end row-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end container-->
+            </section><!--end section-->
+            <!-- End Products -->
+    
+
+<%- include('../layout/footer'); %>
+
+
+<%- include('../layout/scripts'); %>
+</body>
+</html>
