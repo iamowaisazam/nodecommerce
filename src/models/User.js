@@ -1,4 +1,5 @@
-const con = require('../config/db');
+
+
 const table = "users";
 
 const fields = [

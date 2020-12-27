@@ -1,7 +1,5 @@
 const { check, validationResult } = require("express-validator");
 
-const db = require('../config/db');
-
 
 //Register Functions
 exports.register = async (req, res) => {
